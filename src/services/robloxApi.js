@@ -1,9 +1,11 @@
 import axios from 'axios';
 
-const ROBLOX_API_BASE = '/api/games';
-const ROBLOX_THUMBNAILS_API = '/api/thumbnails';
-const ROBLOX_PRESENCE_API = '/api/presence';
-const ROBLOX_APIS = '/api/universes';
+const isDevelopment = import.meta.env.DEV;
+
+const ROBLOX_API_BASE = isDevelopment ? '/api/games' : 'https://games.roblox.com/v1';
+const ROBLOX_THUMBNAILS_API = isDevelopment ? '/api/thumbnails' : 'https://thumbnails.roblox.com/v1';
+const ROBLOX_PRESENCE_API = isDevelopment ? '/api/presence' : 'https://presence.roblox.com/v1';
+const ROBLOX_APIS = isDevelopment ? '/api/universes' : 'https://apis.roblox.com';
 
 export const extractPlaceId = (url) => {
   const match = url.match(/\/games\/(\d+)/);
