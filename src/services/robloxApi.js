@@ -2,10 +2,14 @@ import axios from 'axios';
 
 const isDevelopment = import.meta.env.DEV;
 
-const ROBLOX_API_BASE = isDevelopment ? '/api/games' : 'https://games.roproxy.com/v1';
-const ROBLOX_THUMBNAILS_API = isDevelopment ? '/api/thumbnails' : 'https://thumbnails.roproxy.com/v1';
-const ROBLOX_PRESENCE_API = isDevelopment ? '/api/presence' : 'https://presence.roproxy.com/v1';
-const ROBLOX_APIS = isDevelopment ? '/api/universes' : 'https://apis.roproxy.com';
+const corsProxy = (url) => {
+  if (isDevelopment) {
+    return url.replace('https://games.roblox.com/v1', '/api/games')
+              .replace('https://thumbnails.roblox.com/v1', '/api/thumbnails')
+              .replace('https://apis.roblox.com', '/api/universes');
+  }
+  return `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+};
 
 export const extractPlaceId = (url) => {
   const match = url.match(/\/games\/(\d+)/);
@@ -15,7 +19,8 @@ export const extractPlaceId = (url) => {
 export const getUniverseIdFromPlaceId = async (placeId) => {
   try {
     console.log('Fetching universeId for placeId:', placeId);
-    const response = await axios.get(`${ROBLOX_APIS}/universes/v1/places/${placeId}/universe`);
+    const url = `https://apis.roblox.com/universes/v1/places/${placeId}/universe`;
+    const response = await axios.get(corsProxy(url));
     console.log('Universe ID response:', response.data);
     return response.data?.universeId || null;
   } catch (error) {
@@ -27,9 +32,8 @@ export const getUniverseIdFromPlaceId = async (placeId) => {
 
 export const getGameDetails = async (universeId) => {
   try {
-    const response = await axios.get(`${ROBLOX_API_BASE}/games`, {
-      params: { universeIds: universeId }
-    });
+    const url = `https://games.roblox.com/v1/games?universeIds=${universeId}`;
+    const response = await axios.get(corsProxy(url));
     console.log('Game details response:', response.data);
     return response.data.data[0] || null;
   } catch (error) {
@@ -41,7 +45,8 @@ export const getGameDetails = async (universeId) => {
 
 export const getGameVotes = async (universeId) => {
   try {
-    const response = await axios.get(`${ROBLOX_API_BASE}/games/${universeId}/votes`);
+    const url = `https://games.roblox.com/v1/games/${universeId}/votes`;
+    const response = await axios.get(corsProxy(url));
     return response.data || { upVotes: 0, downVotes: 0 };
   } catch (error) {
     console.error('Error fetching game votes:', error);
@@ -51,7 +56,8 @@ export const getGameVotes = async (universeId) => {
 
 export const getGameFavorites = async (universeId) => {
   try {
-    const response = await axios.get(`${ROBLOX_API_BASE}/games/${universeId}/favorites/count`);
+    const url = `https://games.roblox.com/v1/games/${universeId}/favorites/count`;
+    const response = await axios.get(corsProxy(url));
     return response.data?.favoritesCount || 0;
   } catch (error) {
     console.error('Error fetching favorites:', error);
@@ -61,13 +67,8 @@ export const getGameFavorites = async (universeId) => {
 
 export const getGameThumbnail = async (universeId) => {
   try {
-    const response = await axios.get(`${ROBLOX_THUMBNAILS_API}/games/icons`, {
-      params: {
-        universeIds: universeId,
-        size: '512x512',
-        format: 'Png'
-      }
-    });
+    const url = `https://thumbnails.roblox.com/v1/games/icons?universeIds=${universeId}&size=512x512&format=Png`;
+    const response = await axios.get(corsProxy(url));
     return response.data.data[0]?.imageUrl || null;
   } catch (error) {
     console.error('Error fetching game thumbnail:', error);
