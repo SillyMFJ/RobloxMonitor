@@ -1,8 +1,14 @@
 # 🎮 Roblox Game Analytics Monitor
 
-A comprehensive React application for monitoring and analyzing Roblox game statistics in real-time.
+A comprehensive React application for monitoring and analyzing Roblox game statistics in real-time with beautiful charts and live updates.
 
-## Features
+## 🌐 Live Demo
+
+**[View Live Website](https://cosmicrusaderz.github.io/RobloxMonitor/)**
+
+The website is automatically deployed via GitHub Actions and is publicly accessible!
+
+## ✨ Features
 
 - **Game Information Display**
   - Game thumbnail (clickable to open game page)
@@ -25,14 +31,22 @@ A comprehensive React application for monitoring and analyzing Roblox game stati
   - Past 24 hours peak
 
 - **Interactive Charts**
+  - Beautiful gradient charts with custom tooltips
   - Daily analytics (Past 30 days)
   - Hourly analytics (Past 24 hours)
-  - 10-minute interval analytics (Past 12 hours)
+  - Real-time 10-minute interval analytics (Past 12 hours)
+  - Smooth animations and hover effects
+
+- **Live Updates**
+  - 🟢 Automatic refresh every 60 seconds
+  - Manual refresh button (🔄)
+  - Real-time player count tracking
+  - Live update timestamp display
 
 - **Multi-Game Support**
   - Monitor multiple games simultaneously
   - Add/remove games dynamically
-  - Pre-loaded with example games
+  - Pre-loaded with popular games
 
 ## Getting Started
 
@@ -71,20 +85,27 @@ npm run preview
 
 ## Usage
 
-1. **Default Games**: The app loads two example games on startup:
-   - The Church Of Spawnism
-   - Catalog Avatar Creator
+1. **Visit the Website**: Go to [https://cosmicrusaderz.github.io/RobloxMonitor/](https://cosmicrusaderz.github.io/RobloxMonitor/)
 
-2. **Add New Game**: 
+2. **Default Games**: The app loads two popular games on startup:
+   - **Catalog Avatar Creator** (87K+ active players)
+   - **The Church Of Spawnism**
+
+3. **Add New Game**: 
    - Copy any Roblox game URL (e.g., `https://www.roblox.com/games/GAME_ID/Game-Name`)
    - Paste it into the input field at the top
    - Click "Add Game"
 
-3. **Remove Game**: 
+4. **Live Updates**:
+   - Data refreshes automatically every 60 seconds
+   - Click the 🔄 button for manual refresh
+
+5. **Remove Game**: 
    - Click the red "✕" button in the top-right corner of any game section
 
-4. **View Charts**: 
-   - Switch between Daily, Hourly, and 10-Minute views using the chart tabs
+6. **View Charts**: 
+   - Switch between 📅 Daily, 🕐 Hourly, and ⚡ Real-time views using the chart tabs
+   - Hover over chart points to see detailed stats
 
 ## Technologies Used
 
@@ -94,13 +115,14 @@ npm run preview
 - **Axios** - HTTP client for API requests
 - **Roblox API** - Game data source
 
-## API Integration
+## 🔌 API Integration
 
 The app integrates with Roblox's public APIs:
-- `games.roblox.com/v1/games` - Game details
+- `apis.roblox.com/universes/v1` - Universe ID conversion
+- `games.roblox.com/v1/games` - Game details and live player counts
 - `thumbnails.roblox.com/v1/games/icons` - Game thumbnails
 
-Note: Some statistics (like player counts, visits, etc.) use mock data for demonstration purposes. For production use, you would need to integrate with Roblox's authenticated APIs or use a third-party analytics service.
+All data is fetched in real-time from Roblox's official APIs!
 
 ## Project Structure
 
@@ -123,10 +145,30 @@ reactapp/
 └── vite.config.js
 ```
 
-## Contributing
+## 🚀 Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions.
+
+Every push to the `main` branch triggers a new deployment.
+
+**Live URL**: https://cosmicrusaderz.github.io/RobloxMonitor/
+
+## 📸 Screenshots
+
+The app features:
+- 🎨 Dark theme with gradient accents
+- 📊 Beautiful animated charts
+- 🔄 Live data updates
+- 📱 Responsive design
+
+## 🤝 Contributing
 
 Feel free to submit issues and enhancement requests!
 
-## License
+## 📄 License
 
 This project is open source and available under the MIT License.
+
+---
+
+**Created by CosmicCrusaderZ** | [GitHub Repository](https://github.com/CosmicCrusaderZ/RobloxMonitor)
