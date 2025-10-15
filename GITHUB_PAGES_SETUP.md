@@ -4,7 +4,7 @@ Your code is pushed and the repository is now public! Follow these simple steps 
 
 ## Step 1: Go to Repository Settings
 
-1. Visit: https://github.com/CosmicCrusaderZ/RobloxMonitor/settings/pages
+1. Visit: https://github.com/SillyMFJ/RobloxMonitor/settings/pages
 2. Or navigate to: Your Repository → Settings → Pages (in left sidebar)
 
 ## Step 2: Configure GitHub Pages
@@ -18,7 +18,7 @@ Under **"Build and deployment"** section:
 
 ## Step 3: Wait for Deployment
 
-1. Go to the **Actions** tab: https://github.com/CosmicCrusaderZ/RobloxMonitor/actions
+1. Go to the **Actions** tab: https://github.com/SillyMFJ/RobloxMonitor/actions
 2. You should see a workflow running called "Deploy to GitHub Pages"
 3. Wait 1-2 minutes for it to complete (green checkmark ✅)
 
@@ -26,7 +26,7 @@ Under **"Build and deployment"** section:
 
 Once deployed, your website will be live at:
 
-🌐 **https://cosmicrusaderz.github.io/RobloxMonitor/**
+🌐 **https://sillymfj.github.io/RobloxMonitor/**
 
 ## Troubleshooting
 

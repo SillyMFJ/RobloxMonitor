@@ -4,7 +4,7 @@ A comprehensive React application for monitoring and analyzing Roblox game stati
 
 ## 🌐 Live Demo
 
-**[View Live Website](https://cosmicrusaderz.github.io/RobloxMonitor/)**
+**[View Live Website](https://sillymfj.github.io/RobloxMonitor/)**
 
 The website is automatically deployed via GitHub Actions and is publicly accessible!
 
@@ -85,7 +85,7 @@ npm run preview
 
 ## Usage
 
-1. **Visit the Website**: Go to [https://cosmicrusaderz.github.io/RobloxMonitor/](https://cosmicrusaderz.github.io/RobloxMonitor/)
+1. **Visit the Website**: Go to [https://sillymfj.github.io/RobloxMonitor/](https://sillymfj.github.io/RobloxMonitor/)
 
 2. **Default Games**: The app loads two popular games on startup:
    - **Catalog Avatar Creator** (87K+ active players)
@@ -151,7 +151,7 @@ This project is automatically deployed to GitHub Pages using GitHub Actions.
 
 Every push to the `main` branch triggers a new deployment.
 
-**Live URL**: https://cosmicrusaderz.github.io/RobloxMonitor/
+**Live URL**: https://sillymfj.github.io/RobloxMonitor/
 
 ## 📸 Screenshots
 
@@ -171,4 +171,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-**Created by CosmicCrusaderZ** | [GitHub Repository](https://github.com/CosmicCrusaderZ/RobloxMonitor)
+**Created by SillyMFJ** | [GitHub Repository](https://github.com/SillyMFJ/RobloxMonitor)

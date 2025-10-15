@@ -6,7 +6,7 @@ Your Roblox Game Analytics Monitor has been pushed to GitHub! To deploy it to Gi
 
 ### 1. Enable GitHub Pages
 
-1. Go to https://github.com/CosmicCrusaderZ/RobloxMonitor/settings/pages
+1. Go to https://github.com/SillyMFJ/RobloxMonitor/settings/pages
 2. Under "Build and deployment":
    - Source: Select **"GitHub Actions"**
 3. Click Save
@@ -21,7 +21,7 @@ The GitHub Actions workflow is already set up and will automatically deploy your
 ### 3. Access Your Site
 
 Once deployed, your site will be available at:
-**https://cosmicrusaderz.github.io/RobloxMonitor/**
+**https://sillymfj.github.io/RobloxMonitor/**
 
 ### 4. Manual Deployment (Alternative)
 
@@ -89,4 +89,4 @@ All API calls are proxied through Vite's dev server to avoid CORS issues during 
 
 ---
 
-Created with ❤️ by CosmicCrusaderZ
+Created with ❤️ by SillyMFJ
